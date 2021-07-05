@@ -18,4 +18,4 @@ python3 pairing.py "gov.csv" "trustee.csv"
   + District scores are representive of the need in the district
   + Trustee scores represent their overall strength in the area
 * The pairing output sheet ranks all available trustees on overall matching in over 16 areas
->1 being most compatible ---- 6 being least compatible.
+>1 being most compatible ---- 8 being least compatible.
