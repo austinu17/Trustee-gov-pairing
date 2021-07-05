@@ -88,7 +88,8 @@ District = list(df['District'])
 df = df.replace(['Strongly Disagree','Disagree','Slightly Disagree','Neutral','Slightly Agree','Agree','Strongly Agree'],[1,2,3,4,5,6,7])
 df = df.sort_index (axis = 1)
 
-names = ['District','Q_1_1', 'Q_1_2','Q_1_3','Q_1_4','Q_2_1','Q_2_2','Q_2_3','Q_2_4','Q_3_1','Q_3_2','Q_3_3','Q_3_4','Q_4_1','Q_4_2','Q_4_3','Q_4_4','Trustee Involvment Need Score','Membership Need Score','Interntional Intativates and Service Need Score','District Operations Need Score']
+names = ['District','(Trustee Interaction) Fellowship', '(Trustee Interaction) Inter-District Interactions','(Trustee Interaction) Communication','(Trustee Interaction) Board Involvement','(Membership) Membership Trends','(Membership) Recruitment & Retention','(Membership) Chartering','(Membership) Members In Leadership Roles','(Interntional Intativates and Service) Service In Clubs',
+'(Interntional Intativates and Service) Service In Districts','(Interntional Intativates and Service) Kiwanis Family Relations','(Interntional Intativates and Service) DEI/Alumni Relations','(District Operations) Governing Docs & Awards','(District Operations) Strategic Planning','(District Operations) District Event Attendance/Planning','(District Operations) Fundraising','Trustee Involvment Strength Score','Membership Strength Score','Interntional Intativates and Service Strength Score','District Operations Strength Score']
 
 empty = []
 values = []
@@ -189,7 +190,8 @@ column_names = ['Name','Q_3_2_3','Q_4_3_1','Q_4_4_2','Q_3_3_3','Q_1_3_1','Q_4_4_
 df_1 = df_1.replace(['Strongly Disagree','Disagree','Slightly Disagree','Neutral','Slightly Agree','Agree','Strongly Agree'],[1,2,3,4,5,6,7])
 df_1 = df_1.sort_index (axis = 1)
 
-names_1 = ['Name','Q_1_1', 'Q_1_2','Q_1_3','Q_1_4','Q_2_1','Q_2_2','Q_2_3','Q_2_4','Q_3_1','Q_3_2','Q_3_3','Q_3_4','Q_4_1','Q_4_2','Q_4_3','Q_4_4','Trustee Involvment Strength Score','Membership Strength Score','Interntional Intativates and Service Strength Score','District Operations Strength Score']
+names_1 = ['Name','(Trustee Interaction) Fellowship', '(Trustee Interaction) Inter-District Interactions','(Trustee Interaction) Communication','(Trustee Interaction) Board Involvement','(Membership) Membership Trends','(Membership) Recruitment & Retention','(Membership) Chartering','(Membership) Members In Leadership Roles','(Interntional Intativates and Service) Service In Clubs',
+'(Interntional Intativates and Service) Service In Districts','(Interntional Intativates and Service) Kiwanis Family Relations','(Interntional Intativates and Service) DEI/Alumni Relations','(District Operations) Governing Docs & Awards','(District Operations) Strategic Planning','(District Operations) District Event Attendance/Planning','(District Operations) Fundraising','Trustee Involvment Strength Score','Membership Strength Score','Interntional Intativates and Service Strength Score','District Operations Strength Score']
 
 Trustee_names = list(df_1['Name'])
 
@@ -235,8 +237,10 @@ source = str(os.getcwd())+'/Trustee_Strength.csv'
 shutil.move(source,destination)
 
 print(output_df_1)
-trustee_truth = output_df_1[['Q_1_1', 'Q_1_2','Q_1_3','Q_1_4','Q_2_1','Q_2_2','Q_2_3','Q_2_4','Q_3_1','Q_3_2','Q_3_3','Q_3_4','Q_4_1','Q_4_2','Q_4_3','Q_4_4']]
-district_truth = output_df[['Q_1_1', 'Q_1_2','Q_1_3','Q_1_4','Q_2_1','Q_2_2','Q_2_3','Q_2_4','Q_3_1','Q_3_2','Q_3_3','Q_3_4','Q_4_1','Q_4_2','Q_4_3','Q_4_4']]
+trustee_truth = output_df_1[['(Trustee Interaction) Fellowship', '(Trustee Interaction) Inter-District Interactions','(Trustee Interaction) Communication','(Trustee Interaction) Board Involvement','(Membership) Membership Trends','(Membership) Recruitment & Retention','(Membership) Chartering','(Membership) Members In Leadership Roles','(Interntional Intativates and Service) Service In Clubs',
+'(Interntional Intativates and Service) Service In Districts','(Interntional Intativates and Service) Kiwanis Family Relations','(Interntional Intativates and Service) DEI/Alumni Relations','(District Operations) Governing Docs & Awards','(District Operations) Strategic Planning','(District Operations) District Event Attendance/Planning','(District Operations) Fundraising']]
+district_truth = output_df[['(Trustee Interaction) Fellowship', '(Trustee Interaction) Inter-District Interactions','(Trustee Interaction) Communication','(Trustee Interaction) Board Involvement','(Membership) Membership Trends','(Membership) Recruitment & Retention','(Membership) Chartering','(Membership) Members In Leadership Roles','(Interntional Intativates and Service) Service In Clubs',
+'(Interntional Intativates and Service) Service In Districts','(Interntional Intativates and Service) Kiwanis Family Relations','(Interntional Intativates and Service) DEI/Alumni Relations','(District Operations) Governing Docs & Awards','(District Operations) Strategic Planning','(District Operations) District Event Attendance/Planning','(District Operations) Fundraising']]
 
 
 tuples_dis = district_truth.to_records(index=False)
@@ -276,6 +280,5 @@ print(output_values_final)
 output_values_final.to_csv('Recommended_Ranking.csv')
 source = str(os.getcwd())+'/Recommended_Ranking.csv'
 shutil.move(source,destination)
-
-
+    
 #Copyright 2021, Austin Underwood, All rights reserved.
